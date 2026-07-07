@@ -51,13 +51,6 @@
     </div>
 
     <div>
-      <label class="block text-sm font-medium text-gray-700">Public API URL</label>
-      <input type="url" id="apiBaseUrl" placeholder="https://your-backend.example.com"
-        class="w-full p-2 border rounded-md mt-1 focus:ring-2 focus:ring-indigo-500 outline-none">
-      <p class="text-xs text-gray-400 mt-1">Used instead of localhost:3333. Leave empty for local development.</p>
-    </div>
-
-    <div>
       <label class="block text-sm font-medium text-gray-700">Model</label>
       <select id="modelSelect" class="w-full p-2 border rounded-md mt-1 focus:ring-2 focus:ring-indigo-500 outline-none">
         <option value="Meta-Llama-3.3-70B-Instruct">Llama 3.3 70B Instruct ✅ Recommended</option>
@@ -445,8 +438,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('downloadBtn').addEventListener('click', exportInteractive);
     document.getElementById('copyBtn').addEventListener('click', copyRaw);
     document.getElementById('genBtn').addEventListener('click', generateQuiz);
-    const apiUrlEl = document.getElementById('apiBaseUrl');
-    if (apiUrlEl && IS_LOCALHOST) apiUrlEl.value = 'http://localhost:3333';
     document.getElementById('toggleKey').addEventListener('click', () => {
         const f=document.getElementById('apiKey'); f.type=f.type==='password'?'text':'password';
     });
